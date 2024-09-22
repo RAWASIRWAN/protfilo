@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY protfilo</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Css style -->
+       <style>
+        
+        * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         font-family: 'Poppins',sans-serif;
+        }
+
+       body{
+        background-color: #081b29;
+        color: white;
+       }
+       .header {
+        background:#00abf0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding:20px 10%;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+       }
+
+        .logo {
+            position: relative;
+            font-size: 25px;
+            color: #ededed;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .logo::befor{
+         content: '';
+         position: absolute;
+         top: 0;
+         right: 0;
+         width: 100%;
+         height: 100%;
+         background: #081b29;
+         animation:show .1s ease forwards;
+         animation-delay:.4s;
+        }
+         .bra a  {
+           font-size: 18px;
+           color: #ededed;
+           text-decoration: none;
+           font-weight: 500;
+           margin-left: 35px;
+
+         }
+         .bra a:hover{
+            color: #00abf0;
+         }
+         .bra a:active{
+            color: #00abf0;
+         }
+         .home {
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            display:flex;
+            align-items: center;
+            padding:  0 10%;
+         }
+         .home-contant{
+          max-width: 600px;            
+         }
+         .home-contant{ 
+            font-size: 32px;
+            font-weight: 700;
+         }
+         .home-contant h3{
+            font-size: 32px;
+            font-weight: 700;
+            color:white;
+         }
+         .home-contant p{
+            font-size: 16px;
+            margin: 20px 0 40px ;
+            line-height: 1.2;
+         }
+         .home-contant .btn-box{
+            display: flex;
+            justify-content: space-between;
+            width: 200px;
+            height:50px ;
+            background:#07CBA0;
+            border-radius: 5%;
+         }
+         .btn-box a{
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+           width: 150px;
+           height: 100%;
+           background: #00abf0;
+           border-radius: 2px solid #00abf0;
+           border-radius: 8px;
+         font-size: 19px;
+         color: #081b29;
+         text-decoration: none;
+         font-weight: 600;
+         letter-spacing: 1px;
+         z-index: 1;
+         }
+         .btn-box a:hover{
+            color:#00abf0;;
+         }
+         .btn-box a:nth-child(2){
+            background: transparent;
+            color: #00abf0;
+         }
+       
+         .btn-box a::before{
+            content:'';
+            position:absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+         }
+         .btn-box a:hover::before{
+            width: 100%;
+
+         }
+         .btn-box a:nth-child(2){
+            background: transparent;
+            color: #00abf0;
+         }
+         .home-sci{
+            position:absolute;
+            bottom: 40px;
+            width: 170px;
+            display: flex;
+            justify-content: space-between;
+
+
+         }
+         .home-sci a{
+            position: relative;
+            display: inline-flex;
+            justify-items: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: 2px solid #00abf0;
+            border-radius: 50%;
+            font-size: 20px;
+            color: #00abf0;
+            text-decoration: none;
+            z-index:1;
+            overflow: hidden;
+            transition: .5s;
+         }
+         .home-sci a::before{
+            content:'';
+            position: absolute;
+            top:0;
+            left:0;
+            width: 0;
+            height: 100%;
+            background: #00abf0;
+            z-index: -1;
+            transition: .5s;
+         }
+         .home-sci a:hover{
+            color:#00abf0;
+         }
+
+         .home-sci a:hover::before{
+            width: 100%;
+
+         }
+         .home-imghome{
+           position: absolute;
+           top: 0;
+           right: 30px;
+           width: 400px;
+           height: 100%;
+           background: transparent;
+           border: 2pxn solid red;
+           transition: 3s;
+           border-radius: 60%;
+            background-size: cover;
+            background-position: center;
+            display:flex;
+            align-items: center;
+            padding:  0 10%;
+         }
+       
+        .home-imghome:hover{
+            background: yellowgreen;
+           opacity: .8;
+        }
+       /** KEYFRAMES ANIMATION*/
+       @keyframes showRight {
+         100%{
+            width: 0;
+
+         }
+       }
+     .imaweb{
+           top: 0;
+           right: 30px;
+           width: 400px;
+           height: 100%;
+           background: transparent;
+           border: 2pxn solid red;
+           transition: 3s;
+           border-radius: 60%;
+            background-size: cover;
+            background-position: center;
+            display:flex;
+            align-items: center;
+            padding:  0 10%;
+            float: bottom;
+       }
+
+       
+       </style>
+    <!--Css style -->
+     
+    
+  
+</head>
+<body>
+    <!--header -->
+    <header class="header">
+        <a href="" class="logo">MY protfilo</a>
+            <nav class="bra">
+                <a href="#home">Home</a>
+                <a href="#s1">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#prrtject">Project</a>
+                <a href="#contant">Content</a>
+
+            </nav>
+        
+    </header>
+          
+        <!--header -->
+
+    <section  class="home" id="home">
+        <div class="home-contant">
+        <h1>Hi, I'm Rawa Sirwan </h1><br>
+        <h1>And</h1><br>
+        <h3>I'm developer Full stack </h3>
+        <div class="btn-box">
+         <i class="fa-brands fa-github"><a href="#">Githup</a></i>
+            <i class="fa-bran">  </i>
+          
+        </div>
+        
+        <div class="home-sci">
+            <a href="https://www.facebook.com/reel/1530955011635021"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-twitter' ></i></a>
+            <a href="#"><i class='bx bxl-instagram-alt' ></i></a>
+        </div>
+    </div>
+    <span class="home-imghome">
+     <img class="home-imghome" src="../_b1d6b8df-ec8c-444f-a57b-33e13c480c50.jpeg" alt="">
+    </span>
+    </section>
+    <hr>
+
+    <section id="s1" class="home">
+      <div class="home-contant">
+
+      <h1>About me </h1><br>
+    <h2>My name Rawa sirwan, Iam a student in College of commerce 
+      At IT Department 
+
+    </h2>
+    
+   </div>
+   <img  class="imaweb" src="../web 4.jpeg" alt="" width="150" height="150">
+
+    </section>
+  
+<!--skill section -->
+<section class="skill" id="skills">
+<div class="row d-flex align-items-center mx-5 my-5 text-secondary text-light" id="Skills">
+<div class="container">
+  <h2 class="text-center mb-4 border-bottom border-light">Skills</h2>
+  <div class="row">
+      <div class="col-sm-6 col-lg-3 col-md-4 mb-4">
+          <div class="card border-light bg-dark">
+              <div class="card-body text-center">
+                  <i class="fa-brands fa-html5 fa-3x text-html mb-2"></i>
+                  <h5 class="card-title">HTML</h5>
+              </div>
+          </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 col-md-4 mb-4">
+          <div class="card border-light bg-dark">
+              <div class="card-body text-center">
+                  <i class="fa-brands fa-css3-alt fa-3x text-primary mb-2"></i>
+                  <h5 class="card-title">CSS</h5>
+              </div>
+          </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 col-md-4 mb-4">
+          <div class="card border-light bg-dark">
+              <div class="card-body text-center">
+                  <i class="fa-brands fa-bootstrap fa-3x text-bootstrap mb-2"></i>
+                  <h5 class="card-title">Bootstrap</h5>
+              </div>
+          </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 col-md-4 mb-4">
+          <div class="card border-light bg-dark">
+              <div class="card-body text-center">
+                  <i class="fa-brands fa-js fa-3x text-warning mb-2"></i>
+                  <h5 class="card-title">JavaScript</h5>
+              </div>
+          </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 col-md-4 mb-4">
+          <div class="card border-light bg-dark">
+              <div class="card-body text-center">
+                  <i class="fa-brands fa-php fa-3x text-php mb-2"></i>
+                  <h5 class="card-title">PHP</h5>
+              </div>
+          </div>
+      </div>
+      
+      <div class="col-sm-6 col-lg-3 col-md-4 mb-4">
+          <div class="card border-light bg-dark">
+              <div class="card-body text-center">
+                  <i class="fas fa-database fa-3x mysql-color mb-2"></i>
+                  <h5 class="card-title">MySQL</h5>
+              </div>
+          </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 col-md-4 mb-4">
+          <div class="card border-light bg-dark">
+              <div class="card-body text-center">
+                  <i class="fa-brands fa-git-alt fa-3x text-git mb-2"></i>
+                  <h5 class="card-title">Git</h5>
+              </div>
+          </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 col-md-4 mb-4">
+          <div class="card border-light bg-dark">
+              <div class="card-body text-center">
+                  <i class="fa-brands fa-github fa-3x text-secondary mb-2"></i>
+                  <h5 class="card-title">GitHub</h5>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+</section>
+<section class="prrtject " id="prrtject">
+    <div class="row mx-5 my-5 text-secondary text-light" id="Projects">
+      <div class="container">
+          <h2 class="text-center mb-4 border-bottom border-light">Projects</h2>
+          <div class="row">
+              <div class="col-sm-12 col-lg-3 col-md-4">
+                  <div class="card bg-dark">
+                      <div class="card-body">
+                          <h5 class="card-title">flower design</h5>
+                          <img src="../pexels-jmark-250716.jpg" class="card-img-top w-75" alt="...">
+                          <p class="card-text">simple design for flower website<br><i class="bi bi-arrow-down-circle"></i> this is the GitHub code.</p>
+                          <a href="" class="btn btn-secondary">code</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-sm-12 col-lg-3 col-md-4 card bg-dark">
+                  <div class="card-body">
+                      <h5 class="card-title">portfolio design</h5>
+                      <img src="../_b1d6b8df-ec8c-444f-a57b-33e13c480c50.jpeg" class="card-img-top w-75" alt="...">
+                      <p class="card-text">simple design for portfolio website<br><i class="bi bi-arrow-down-circle"></i> this is the GitHub code.</p>
+                      <a href="" class="btn btn-secondary">code</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<section class="contant" id="contant">
+    <div class="row d-flex align-items-center mx-5 my-5 text-secondary text-light" id="Contact">
+      <div class="container">
+          <h2 class="text-center mb-4 border-bottom border-light">Contact</h2>
+          <div class="row">
+              <form>
+                  <div class="mb-3">
+                      <label for="exampleInputFullName" class="form-label">Full Name</label>
+                      <input type="email" class="form-control" id="exampleInputFullName" placeholder="Full Name">
+                  </div>
+                  <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                  </div>
+                  <div class="mb-3">
+                      <label for="exampleFormControlTextarea1" class="form-label">Message:</label>
+                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="write your massage here"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-secondary"><i class="bi bi-send"></i>Submit</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</section>
+    <footer class="row bg-secondary text-light text-center">
+      <p class="fs-4 text-dark"><b>Create By : Rawa Sirwan</b></p>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+    
+</body>
+</html>
